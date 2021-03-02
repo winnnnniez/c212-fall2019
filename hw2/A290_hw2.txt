@@ -1,0 +1,74 @@
+0.
+> let n = 3;
+sets the value of variable n to 3
+
+> console.log(`${n} squared is ${n * n}`);
+since the inside of `${}` is evaluated before converted to string,
+${n} is 3
+${n * n} is 3 * 3 = 9
+console prints: 3 squared is 9
+
+1.
+using the code from chapter 0
+> range(10, 3, -2)
+a series of numbers from 10 to 3 (inclusive), by decrement of 2:
+[ 10, 8, 6, 4 ]
+
+2.
+> range(10, 1, -3)
+a series of numbers from 10 to 1 (inclusive), by decrement of 3:
+[ 10, 7, 4, 1 ]
+
+3.
+1011(2) -> 13(10)
+35(10) -> 100011(2)
+ACE(16) -> 2766(10)
+342(10) -> 156(16), 526(8)
+
+prove 7 is half of 12:
+1) consider 7 and 12 are in base 10, convert to base 8
+   12(10) -> 14(8)
+   7(10) -> 7(8)
+   thus 7 is half of 12 in base 8
+
+2) consider 7 and 12 are in base 12, convert to base 10
+   12(12) -> 14(10)
+   7(12) -> 7(10)
+   thus 7 is half of 12 in base 10
+
+4.
+typeof console: object
+typeof console.log: function
+typeof prompt: function
+typeof prompt("enter:"): string
+
+8.
+> a < a++
+false
+
+> ++a > a
+false
+
+> a++ - a
+-1
+
+> a++ < a
+true
+
+> a++ + ++a
+2*a + 2
+
+9.
+scalable_z is a function that creates a scalable z by the scale of size.
+
+z_row is a function inside scalable_z, that given the row number, returns the corresponding line (string) of that row
+Inside z_row, a variable line is created as an empty string.
+For each col [0, size), if:
+    1) row equals 0 (i.e. first row), or
+    2) row equals size - 1 (i.e. last row), or
+    3) row + col equals size - 1 (i.e. the vertical line), or
+    4) row equals half of size (i.e the mid row) and size/3 <= col, and 2 * size/3 >= col (i.e the middle third section of the middle row)
+a "* " is concatenated to line, otherwise an empty space is concatenated.
+
+Then for each row [0, size), print the line created by z_row(row).
+Function ends with two empty lines.

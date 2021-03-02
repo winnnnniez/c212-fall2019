@@ -1,0 +1,61 @@
+1.
+> var a = /3 \+/;
+assign regular expression /3 \+/ to variable a
+
+> console.log(a.test("3 + 5"));
+prints the result of searching a, i.e. /3 \+/, in "3 + 5". since + followed by \ is interpreted literally, a matches "3 + 5". Therefore console prints true
+
+2.
+console.log( /^\d+$/.test(s) )
+^ is beginning of string, $ is end of string
+
+3.
+console.log( /^\d*$/.test(s) )
+
+4.
+console.log( /^\D*$/.test(s) )
+
+5.
+pattern modifiers are options for pattern matching. e.g:
+modifier i performs case insensitivity,
+var a = /D/i;
+console.log(a.test("d")); // --> true
+
+m performs multiline,
+var a = /^d/;
+console.log(a.test("a\nd")); // --> false
+var a = /^d/m;
+console.log(a.test("a\nd")); // --> true
+
+g performs global search.
+var a = /d/g;
+console.log("dddd".match(a)); // --> [ 'd', 'd', 'd', 'd' ]
+
+6.
+s.match(/\d\d\d/);
+
+7.
+console.log(new Date());
+
+8.
+A boundary marker represents either: the beginning of the string, the end of the string, the position between word and non-word character. A boundary marker doesn't match any character, it is a condition enforced.
+One useful application of boundary marker is it can be used to separate words in a sentence with white spaces. e.g.:
+console.log("oh bother".match(/\w+\b/g)); // -- > [ 'oh', 'bother' ]
+
+9.
+"The pipe character denotes a choice between the pattern to its left and the pattern to its right."
+
+10.
+s.replace(/[^]/g, "?")
+
+11.
+s.replace(/([^])/g, "($1)")
+
+12.
+s.replace(/(\d)(\d)/g, "$2$1")
+
+13.
+s.replace(/(\d)(\d)/g, (match, x1, x2) => Number(x1) + Number(x2))
+ 
+14.
+s.match(/\b\w+\b/)

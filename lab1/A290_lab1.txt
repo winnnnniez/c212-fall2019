@@ -1,0 +1,141 @@
+1.
+
+[1] console.log("    ___\n   ('v')\n  ((   ))\n-/-\"---\"--\n"); // [ 1]
+prints four spaces and three underscores on first line, line break with \n
+prints three spaces and ('v') on second line, line break with \n
+prints two spaces and ((   )) on third line, line break with \n
+prints -/-"---"-- on fourth line, since \" inside string is the character ", line break with \n
+ends with an empty line with the last \n
+everything after // is comment
+The console will print:
+    ___
+   ('v')
+  ((   ))
+-/-"---"--
+
+[2] console.log( Infinity + 3 );                                 // [ 2]
+The console will print Infinity since infinity + 3 is still infinity.
+
+[3] console.log( typeof Infinity );                              // [ 3]
+The console will print number since the type of infinity is number.
+
+[4] console.log( typeof 4.5 );                                   // [ 4]
+The console will print number since the type of 4.5 is number.
+
+[5] console.log( typeof 3 );                                     // [ 5]
+The console will print number since the type of 3 is number.
+
+[6] console.log( 3 / 0 );                                        // [ 6]
+The console will print Infinity since 3 divided by 0 diverges to infinity.
+
+[7] console.log( -3 / 0 );                                       // [ 7]
+The console will print -Infinity since -3 divided by 0 diverges to negative infinity.
+
+[8] console.log( Infinity - Infinity );                          // [ 8]
+The console will print NaN since Infinity - Infinity does not yield meaningful results.
+
+[9] console.log( 0 / 0 );                                        // [ 9]
+The console will print NaN since 0 / 0 does not yield meaningful results.
+
+[10] console.log( typeof NaN );                                   // [10]
+The console will print number since NaN is a value of the type number that stands for “not a number”.
+
+[11] console.log( Math.random() < 0.5 ? "heads" : "tails" );      // [11]
+Math.random() gives a random number in [0, 1)
+If Math.random() has a value less than 0.5, the value on the left of ? is true, prints heads;
+if Math.random() has a value greater than 0.5, the value on the left of ? is false, prints tails.
+The console will print randomly heads or tails depending on the value of Math.random()
+
+[12] console.log( typeof undefined );                             // [12]
+The console will print undefined since it is the type undefined.
+
+[13] console.log( typeof null );                                  // [13]
+The console will print object since it is the type object.
+
+[14] console.log(8 * null);                                       // [14]
+The console will print 0 since null is automatically converted to number 0, and 8 * 0 is 0
+
+[15] console.log("5" - 1);                                        // [15]
+The console will print 4 since string "5" is automatically converted to number 5, and 5 - 1 is 4
+
+[16] console.log("5" + 1);                                        // [16]
+Because + tries concatenation before numeric addition, 1 is converted to string "1". Concatenation of "5" and "1" is "51"
+The console will print "51"
+
+[17] console.log("couch" * 2);                                    // [17]
+The console will print NaN because the string "couch" cannot be converted to number, the result is meaningless.
+
+[18] console.log(false == 0);                                     // [18]
+The console will print true because of automatic type conversion, and false equals to logical number 0.
+
+[19] console.log(null == undefined);                              // [19]
+The console will print true because of automatic type conversion, and both null and undefined denote the absence of a meaningful value.
+
+[20] console.log(null == 0);                                      // [20]
+The console will print false because null is an object of empty value while 0 is a number.
+
+[21] console.log(undefined == 0);                                 // [21]
+The console will print false because undefined stands for empty value while 0 is a number.
+
+[22] console.log(null || "user");                                 // [22]
+The console will print user since null cannot be converted to true, so the operator || will return the value on its right.
+
+[23] console.log("Karl" || "user");                               // [23]
+The console will print Karl since it can be converted to true, the operator || will return the value on the left when it is true.
+
+[24] console.log(undefined || "tomato");                          // [24]
+The console will print tomato since undefined is converted to false and "tomato" can be converted to true, the operator || will return the value on the right when the value to its left is false and the value to its right is true.
+
+[25] console.log("tomato" && "pasta");                            // [25]
+The console will print "pasta" since both "tomato" and "pasta" are logically true, the operator && will return the value to the right when both values are true.
+
+2.
+
+[1] var a = Math.floor(Math.random() * 100) - 50
+Math.random() * 100 is a random number between 0 (inclusive) and 1 (exclusive) times 100. This line of code creates variable a that is the largest integer smaller than or equal to that number, and minus 50.
+
+[2] var b = Math.floor(Math.random() * 100) - 50
+Creates another variable b using the same procedure but different random number
+
+[3] console.log( a + " " + b )
+Prints a string concatenating a, an empty space, and b.
+
+[4] a = a + b
+Sets the value of a to a + b
+
+[5] b = a - b
+Sets the value of b to a - b. The value of a here is the ending result of line [4]
+
+[6] a = a - b
+set the value of a to a - b. The value of a and b is the ending result of line [4] and [5] respectively.
+
+[7] console.log( a + " " + b )
+Prints a string concatenating a, an empty space and b. The value of a and b is the ending result of line [6] and [5] respectively.
+
+3.
+
+[1] -bash-4.2$ cat seven.js
+prints content inside the file seven.js
+
+[2] console.log( new Number("32") + 6 );
+new Number("32") creates a number 32
+The console will print 38 since 32 + 6 is 38.
+
+[3] console.log( isNaN(3/0) );
+The console will print false since 3/0 is Infinity, and isNaN(Infinity) returns false because Infinity is not NaN.
+
+[4] console.log("sunderland".charAt(3));
+The console will print d since "sunderland".charAt(3) returns the character at index position 3 (couting from 0) from the string "sunderland".
+
+[5] console.log("sunderland".charAt("sunderland".length-1));
+"sunderland".length is the length of string "sunderland", 10.
+The console will print d since "sunderland".charAt(3) returns the character at index position 9 (since 10 - 1 is 9) from the string "sunderland".
+
+[6] console.log("sunderland".substring(1, 6));
+The console will print under since "sunderland".substring(1, 6) returns a substring of "sunderland" between index position 1 (inclusive) and 6 (exclusive).
+
+[7] console.log("sunderland".substring(6));
+The console will print land since "sunderland".substring(6) returns a substring of "sunderland" between index position 6 (inclusive) and "sunderland".length (exclusive).
+
+[8] -bash-4.2$
+nothing

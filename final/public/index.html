@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="shoppingList">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Xiuwen Zhang - Final Exam</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+    <script src="core.js"></script>
+  </head>
+  <body ng-controller="mainController">
+    <div class="w3-card-2 ng-scope" style="max-width:400px; margin-top:100px; margin-left:auto; margin-right:auto">
+      <header class="w3-container w3-light-grey w3-padding-16">
+        <h3>My Shopping List</h3>
+      </header>
+      <ul class="w3-ul">
+        <li ng-repeat="product in products" class="w3-padding-16 ng-binding ng-scope">
+          {{ product.text }}<span ng-click="removeItem(product._id)" style="cursor:pointer;" class="w3-right w3-margin-right">&times;</span>
+        </li>
+      </ul>
+      <div class="w3-container w3-light-grey w3-padding-16">
+        <div class="w3-row w3-margin-top">
+          <div class="w3-col s10">
+            <input placeholder="Add shopping items here" ng-model="formData.text" class="w3-input w3-border w3-padding ng-pristine ng-untouched ng-valid ng-empty">
+          </div>
+          <div class="w3-col s2">
+            <button ng-click="addItem()" class="w3-btn w3-padding">Add</button>
+          </div>
+        </div>
+        <p class="w3-text-red ng-binding">{{errortext}}</p>
+      </div>
+    </div>
+  </body>
+</html>

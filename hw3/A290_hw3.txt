@@ -1,0 +1,38 @@
+1.
+expression  | a == false  | a != false  | a || !a | a && !a | a && true | a && false  | a || true | a || false
+------------+-------------+-------------+---------+---------+-----------+-------------+-----------+-----------
+a = true    | false       | true        | true    | false   | true      | false       | true      | true
+a = false   | true        | false       | true    | false   | false     | false       | true      | false
+------------+-------------+-------------+---------+---------+-----------+-------------+-----------+-----------
+simplified  | !a          | a           | true    | false   | a         | false       | true      | a
+
+2.
+> (n < 5) && (n < 25)
+n < 5
+
+> P(n) = (n < 5) || (n < 25)
+P(n) = n < 25
+
+> (n > 3) || (n < 5)
+true
+
+> (n > 3) && (n < 5)
+n == 4
+
+> (n > 20) ? true : (n > 10)
+n > 10
+
+> (n < 10) ? true : (n > 20)
+(n < 10) || (n > 20)
+
+> (n < 10) ? ((n > 5) ? true : false) : (n < 20)
+(n < 10) ? (n > 5) : (n < 20)
+(n > 5) && (n < 20)
+
+3.
+> (n < 3) || (n > 5)
+the expression can be converted to n != 3 && n != 4 && n != 5, but it's not simplified.
+I cannot simplify this expression.
+
+4.
+b = (n < 3) || (n > 5)
